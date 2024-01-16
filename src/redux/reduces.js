@@ -1,12 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  value: 0,
-};
-
 export const counterSlice = createSlice({
   name: "counter",
-  initialState,
+  initialState: {
+    value: 0,
+    box: {
+      height: "200px",
+      width: "200px",
+      border: "1px solid red",
+      backgroundColor: "blue",
+    },
+    percent: "0%",
+  },
   reducers: {
     increment: (state) => {
       state.value += 1;
@@ -16,6 +21,15 @@ export const counterSlice = createSlice({
     },
     incrementByAmount: (state, action) => {
       state.value += action.payload;
+    },
+    setChangeBackgroundColor: (state, payload) => {
+      state.box.backgroundColor = payload.payload;
+    },
+    setHeight: (state, payload) => {
+      state.box.height = payload.payload;
+    },
+    setProgress: (state, payload) => {
+      state.percent += payload.payload + "%";
     },
   },
 });
