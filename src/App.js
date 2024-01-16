@@ -6,6 +6,3 @@ function App() {
 }
 
 export default App;
-//A - add
-//C - commit
-//P - push
