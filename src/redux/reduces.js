@@ -2,14 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const counterSlice = createSlice({
   name: "counter",
-  initialState:{
-    value:0,
-    box:{
-      height:'200px',
-      width:'200px',
-      border:'1px solid black',
-      background:'red',
+  initialState: {
+    value: 0,
+    box: {
+      height: "200px",
+      width: "200px",
+      border: "1px solid red",
+      backgroundColor: "blue",
     },
+    percent: "0%",
 
   },
   reducers: {
@@ -24,7 +25,16 @@ export const counterSlice = createSlice({
     },
     setBackgroundColor:(state,payload) =>{
       state.box.background =payload.payload;
-    }
+    },
+    setChangeBackgroundColor: (state, payload) => {
+      state.box.backgroundColor = payload.payload;
+    },
+    setHeight: (state, payload) => {
+      state.box.height = payload.payload;
+    },
+    setProgress: (state, payload) => {
+      state.percent += payload.payload + "%";
+    },
   },
 });
 

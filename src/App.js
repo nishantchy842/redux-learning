@@ -1,16 +1,20 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
+import { ColorPicker } from "antd";
+import BoxComponent from "./redux/BoxComponent";
 
 function App() {
-<<<<<<< HEAD
+
   return (
     <div className="App">
-      Nelson Adhikari
+      <ColorPicker onChange={(value, hex) => console.log(value, hex)} />
+      <BoxComponent/>
     </div>
   );
-=======
-  return <div className="App">Nishant</div>;
->>>>>>> 6385afed8ed313aea6dbe38ac51a04290ba4247e
+
+  //useSelector make box
+  //useDispaction for action call
+
 }
 
 export default App;
