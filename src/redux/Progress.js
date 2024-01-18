@@ -4,7 +4,7 @@
 // import { MinusOutlined, PlusOutlined } from '@ant-design/icons';
 // import { Button, Progress } from 'antd';
 // const ProgressBar = () => {
-  
+
 //   const dispatch = useDispatch();
 //   const v = useSelector((state)=>state.value);
 //   console.log(v ,"v");
@@ -16,7 +16,7 @@
 //     dispatch(decrementNumber(10));
 //     dispatch(decrement(10))
 //   };
-  
+
 //   return (
 //     <>
 //       <div
@@ -31,9 +31,9 @@
 //         {/* <Button onClick={decline()} icon={<MinusOutlined />} /> */}
 
 //         <Button onClick={() => v}>decrement</Button>
-        
+
 //         <Button onClick={() => incrementNumber}>increase</Button>
-// {/*         
+// {/*
 //         <Button onClick={increase()} icon={<PlusOutlined />} /> */}
 //       </Button.Group>
 //     </>
@@ -41,13 +41,18 @@
 // };
 
 // export default ProgressBar;
-import { incrementNumber, decrementNumber, increment, decrement } from './reduces';
-import { useSelector, useDispatch } from 'react-redux';
-import { Button, Progress } from 'antd';
+import {
+  incrementNumber,
+  decrementNumber,
+  increment,
+  decrement,
+} from "./reduces";
+import { useSelector, useDispatch } from "react-redux";
+import { Button, Progress } from "antd";
 
 const ProgressBar = () => {
   const dispatch = useDispatch();
-  const v = useSelector((state) => state.value);
+  const v = useSelector((state) => state.todo);
 
   const increase = () => {
     dispatch(incrementNumber(10));
@@ -60,12 +65,12 @@ const ProgressBar = () => {
   };
 
   const getResponse = () => {
-    if (v >= 80) {
-      return 'Almost there!';
-    } else if (v >= 50) {
-      return 'Making progress!';
+    if (v.vlaue >= 80) {
+      return "Almost there!";
+    } else if (v.value >= 50) {
+      return "Making progress!";
     } else {
-      return 'Keep going!';
+      return "Keep going!";
     }
   };
 
@@ -76,8 +81,8 @@ const ProgressBar = () => {
           marginBottom: 10,
         }}
       >
-        <Progress percent={v} />
-        <Progress type="circle" percent={v} />
+        <Progress percent={v?.value} />
+        <Progress type="circle" percent={v?.value} />
       </div>
       <Button.Group>
         <Button onClick={decline}>decrement</Button>
