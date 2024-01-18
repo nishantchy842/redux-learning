@@ -1,8 +1,15 @@
-import logo from "./logo.svg";
-import "./App.css";
+
+import './App.css';
+import ProgressBar from './redux/Progress';
 
 function App() {
-  return <div className="App">Nishant</div>;
+  return (
+    <div className="App">
+     chandan Bachhar
+     <ProgressBar/>
+
+    </div>
+  );
 }
 
 export default App;
