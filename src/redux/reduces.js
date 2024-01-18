@@ -11,7 +11,6 @@ export const counterSlice = createSlice({
       backgroundColor: "blue",
     },
     percent: "0%",
-
   },
   reducers: {
     increment: (state) => {
@@ -23,8 +22,8 @@ export const counterSlice = createSlice({
     incrementByAmount: (state, action) => {
       state.value += action.payload;
     },
-    setBackgroundColor:(state,payload) =>{
-      state.box.background =payload.payload;
+    setBackgroundColor: (state, payload) => {
+      state.box.background = payload.payload;
     },
     setChangeBackgroundColor: (state, payload) => {
       state.box.backgroundColor = payload.payload;
@@ -41,6 +40,13 @@ export const counterSlice = createSlice({
 // Action creators are generated for each case reducer function
 
 const { reducer, actions } = counterSlice;
-export const { increment, decrement, incrementByAmount } = actions;
+export const {
+  increment,
+  decrement,
+  incrementByAmount,
+  setChangeBackgroundColor,
+  setHeight,
+  setProgress,
+} = actions;
 
 export default reducer;
