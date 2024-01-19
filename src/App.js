@@ -1,8 +1,20 @@
-import logo from "./logo.svg";
+import logo from "./logo.svg"; 
 import "./App.css";
+import SpModal from "./redux/Model";
+import ProgressBar from "./redux/progress";
+import { ColorPicker } from "antd";
 
 function App() {
-  return <div className="App">Nishant</div>;
+  //useSelector make box
+  //useDispaction for action call
+
+  return (
+    <div className="App">
+      {/* <ColorPicker onChange={(value, hex) => console.log(value, hex)} />
+      <ProgressBar/> */}
+      <SpModal/>
+    </div>
+  );
 }
 
 export default App;
