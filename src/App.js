@@ -1,16 +1,20 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import { ColorPicker } from "antd";
+// import { ColorPicker } from "antd";
 import BoxComponent from "./redux/BoxComponent";
 import { useDispatch } from "react-redux";
 import { setChangeBackgroundColor } from "./redux/reduces";
+import CustomButtons from "./redux/components/CustomButtons";
+
 
 function App() {
   const dispatch = useDispatch();
 
   return (
     <div className="App">
-      <BoxComponent />
+      {/* <ColorPicker onChange={(value, hex) => console.log(value, hex)} /> */}
+      <BoxComponent/>
+      <CustomButtons/>
     </div>
   );
 

@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setColor } from "./boxSlice";
 import { ColorPicker } from "antd";
 
+
 const BoxComponent = () => {
   const boxColor = useSelector((state) => state.box.color);
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const BoxComponent = () => {
       </div>
       <ColorPicker onChange={(value, hex) => handleColorChange(hex)} />
 
-      <button onClick={handleColorChange}>Change Color</button>
+      {/* <button onClick={handleColorChange}>Change Color</button> */}
     </div>
   );
 };
